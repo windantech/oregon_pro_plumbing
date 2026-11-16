@@ -1,0 +1,23 @@
+OREGON PRO PLUMBING — LOGO UPDATE (NO TERMINAL)
+
+This update adds the supplied Oregon Pro Plumbing logo to the site header,
+footer, supporting SEO pages and browser tab (favicon).
+
+INSTALL USING cPanel / FILE MANAGER
+1. Download the ZIP and keep a backup of the current website files.
+2. Log in to your hosting File Manager and open the folder containing index.html.
+   Usually this is public_html or your domain's document root.
+3. Upload the ZIP and use Extract in that SAME folder (not in a new subfolder).
+4. Allow files to be replaced: index.html, four informational HTML pages.
+   The ZIP creates assets/oregon-pro-plumbing-logo.png,
+   assets/oregon-pro-plumbing-icon.png and assets/favicon-oregon.png.
+5. Reload the site with Ctrl+Shift+R or open it in a private browser window.
+
+IMPORTANT:
+- The ZIP DOES NOT include or overwrite PHP, Stripe, SMTP, database, admin settings, or customer data.
+- You can upload just the THREE images in assets/ if you've customized your HTML;
+  however, to show the logo on every page, the HTML changes are also needed.
+- If the site has been modified after the last package, compare/backup index.html
+  before replacing it so you do not lose newer customizations.
+- The supplied stacked logo is shown in the footer. The icon-only crop is used
+  in the header so that navigation remains compact on phones.

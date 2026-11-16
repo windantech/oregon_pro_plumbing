@@ -1,0 +1,11 @@
+# Server logs (may contain customer booking references)
+error_log
+*.log
+# Deployment bundles
+*.zip
+# Third-party SDK uploaded through the portal's admin Settings
+phone/assets/vendor/twilio.min.js
+# Private data must never be committed
+.env
+*.sqlite*
+config.php

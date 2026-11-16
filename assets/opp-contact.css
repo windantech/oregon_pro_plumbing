@@ -1,0 +1,30 @@
+/* Oregon Pro Plumbing — location and contact strip */
+.opp-contact-strip{background:#0d493a;color:#fff;border-bottom:1px solid #ffffff28;position:relative;z-index:3}
+.opp-contact-inner{max-width:1500px;margin:auto;padding:9px 26px;display:flex;gap:18px 38px;justify-content:space-between;align-items:center;font:500 13px/1.35 'DM Sans',Arial,sans-serif}
+.opp-contact-location,.opp-contact-phone{display:inline-flex;align-items:center;gap:9px;min-width:0}
+.opp-contact-strip strong{color:#d9ffe0;font-weight:800}
+.opp-contact-strip small{color:#b8d5cb;font-size:10px}
+.opp-contact-icon{font-size:17px;flex:none}
+.opp-footer-contact{margin-top:20px;display:flex;flex-wrap:wrap;gap:12px 30px;font:500 13px/1.5 'DM Sans',Arial,sans-serif}
+.opp-footer-contact p{margin:0;color:#c9e2d7!important}
+.opp-footer-contact strong{display:block;color:#fff!important;font-weight:800;margin-bottom:3px}
+.opp-footer-contact span{display:block}
+.opp-footer-contact small{color:#98b6aa;font-size:11px;display:block;margin-top:3px}
+@media(max-width:700px){.opp-contact-inner{padding:8px 18px;flex-wrap:wrap;gap:5px 18px;font-size:11px}.opp-contact-icon{font-size:14px}.opp-contact-phone small{font-size:9px}}
+@media(max-width:370px){.opp-contact-inner{font-size:10px}.opp-contact-phone small{display:block;margin-top:2px}}
+/* Booking reference must remain invisible before Stripe verifies payment. */
+#copyCode[hidden],#viewJob[hidden],#pendingResumeBox[hidden]{display:none!important}
+
+/* Production US business contact number — clickable desktop and mobile */
+.opp-contact-strip .opp-contact-call{color:#fff;text-decoration:none;border-radius:9px;padding:5px 9px;margin:-5px -9px;transition:background .18s ease}
+.opp-contact-strip .opp-contact-call:hover,.opp-contact-strip .opp-contact-call:focus-visible{background:rgba(255,255,255,.13)}
+.opp-contact-strip .opp-contact-call small{display:inline-block;color:#c9f7d5;margin-left:5px;font-weight:700}
+.opp-footer-contact .opp-phone-footer-link{display:inline-block;color:#d7ffe5!important;font-weight:800;text-decoration:underline;text-underline-offset:3px}
+.opp-footer-contact .opp-phone-footer-link:hover{color:white!important}
+.opp-nav-actions .opp-header-call{font-weight:900;font-size:12px;white-space:nowrap;color:#0b754a;display:inline-flex;gap:5px;align-items:center}
+.opp-nav-actions .opp-header-call:hover{text-decoration:underline}
+.opp-hero-call{font-size:13px!important;color:#cdebe5!important;margin:13px 0 0!important}
+.opp-hero-call a{font-weight:800;color:#f3fff9!important;text-decoration:underline;text-underline-offset:3px}
+.opp-hero-call a:hover{color:#b5f7ca!important}
+@media(max-width:1300px){.opp-nav-actions .opp-header-call{display:none}}
+@media(max-width:700px){.opp-contact-strip .opp-contact-call small{font-size:10px}.opp-contact-strip .opp-contact-call{margin:0;padding:2px 0}.opp-hero-call{font-size:12px!important}}

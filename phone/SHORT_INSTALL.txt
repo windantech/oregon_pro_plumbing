@@ -1,0 +1,11 @@
+OREGON PRO PLUMBING - BROWSER CALLING PORTAL
+1. Extract the ZIP into public_html/phone/
+2. Open https://oregonproplumbing.com/phone/setup.php
+3. Create a secure administrator login and choose SQLite or MySQL
+4. Delete setup.php after installation
+5. Log in and open Settings to enter your Twilio Account SID, Auth Token, API Key SID/Secret, and TwiML App SID
+6. Upload the official Twilio SDK 2.x dist/twilio.min.js in Settings (not included in the ZIP)
+7. Connect TwiML App Voice Request to https://oregonproplumbing.com/phone/api/outgoing.php with HTTP POST
+8. Click Start Phone and test outgoing US calls if permitted by Twilio
+9. Only after successful testing, point Twilio number incoming webhook to https://oregonproplumbing.com/phone/api/incoming.php with POST; leave your old Studio Flow working until then
+10. See README_START_HERE.md for full details and safety notes

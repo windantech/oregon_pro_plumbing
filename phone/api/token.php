@@ -1,0 +1,2 @@
+<?php declare(strict_types=1);require dirname(__DIR__).'/app/core.php';if($_SERVER['REQUEST_METHOD']!=='GET')json_response(['error'=>'Method not allowed'],405);$user=need_user();if(!twilio_ready())json_response(['error'=>'Your administrator needs to configure the Twilio API Key, Auth Token and TwiML Application in Settings.'],409);
+try{json_response(['token'=>jwt_voice_token($user),'identity'=>agent_identity((int)$user['id']),'ttl'=>3600]);}catch(Throwable $e){json_response(['error'=>$e->getMessage()],500);}

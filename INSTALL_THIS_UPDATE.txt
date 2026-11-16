@@ -1,0 +1,55 @@
+OREGON PRO PLUMBING — CONTACTS + UNPAID BOOKING / STRIPE REFERENCE UPDATE
+=========================================================================
+
+WHAT THIS CHANGES
+-----------------
+- Displays business address: 1150 Darlen Ln, Eugene, OR 97401.
+- Displays placeholder phone: (541) 555-0148. REPLACE this example with your real working phone number before launch.
+- Retains the expanded services, current landing-page design, logo, sample reviews,
+  and mobile review autoplay.
+- When a customer submits a booking, it is saved immediately as UNPAID in the admin dashboard.
+- The customer's booking number remains hidden until a payment is confirmed by Stripe.
+- A separate, random private payment token lets the same device continue checkout
+  without revealing the booking reference.
+- A signed Stripe webhook (and the existing Stripe verification endpoint)
+  confirms real payments. Do not rely on a URL parameter alone as payment proof.
+- No terminal / SSH / Composer is required for this update. Existing hosting must
+  support PHP with PDO SQLite or PDO MySQL, and the database user needs permission
+  to create one small table automatically on first booking.
+
+INSTALL VIA HOSTING FILE MANAGER
+--------------------------------
+1) BACK UP your existing website and database before starting.
+2) Open your web hosting File Manager, then enter public_html (or the website root).
+3) Upload Oregon_Pro_Plumbing_Contacts_Booking_Payment_Update.zip.
+4) Extract the ZIP DIRECTLY inside the website root and confirm that index.html,
+   api/, includes/, admin/, and assets/ are in their normal folders.
+5) Allow replacement of matching files (do NOT delete your entire site first).
+6) Do NOT reinstall or rerun setup.php. The existing database and private
+   Stripe and SMTP settings must be preserved.
+7) Visit https://oregonproplumbing.com/ and hard-refresh (Ctrl+Shift+R).
+
+NEW BOOKING FLOW
+----------------
+1) Customer completes the booking form.
+2) Site saves the request server-side with paid amount $0.00.
+3) Customer sees "Request received — Unpaid" but NO OPP- booking number.
+4) Customer chooses "Proceed to Pay" and goes to secure Stripe Checkout.
+5) If Stripe confirms a payment (service call or full initial estimate),
+   the booking number becomes visible and job tracking becomes available.
+6) If payment is cancelled or pending, booking stays UNPAID in admin.
+7) The same browser can continue an unpaid checkout from the Jobs page.
+
+NOTES
+-----
+- The internal OPP reference remains visible to authorized staff inside admin
+  (and may be included in staff-only booking notification emails).
+- A new table named booking_payment_tokens is created automatically on the first
+  new booking. It stores only a SHA-256 hash of the customer's private token.
+- Pending payment links stay valid up to 90 days. If lost, staff can still see
+  the unpaid request in admin and contact the customer directly.
+- The actual Stripe payment flow is enabled only if keys and webhook settings
+  are configured, payments enabled, and prices confirmed.
+- Before accepting live payments, test a new booking end-to-end with Stripe
+  test mode, including both successful and cancelled payment states.
+- No changes are made to private configuration files or existing booking data.

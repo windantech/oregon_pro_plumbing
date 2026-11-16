@@ -1,0 +1,1 @@
+<?php declare(strict_types=1);require dirname(__DIR__).'/app/core.php';$user=need_user();$q=database()->query('SELECT direction,from_number,to_number,status,created_at FROM call_logs ORDER BY id DESC LIMIT 40');json_response(['calls'=>$q->fetchAll()]);

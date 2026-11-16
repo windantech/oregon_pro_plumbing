@@ -1,0 +1,21 @@
+OREGON PRO PLUMBING — WORKING NUMBER AND TESTIMONIAL DESIGN UPDATE
+
+Update details
+- Replaces the old sample number (541) 555-0148 with the working Twilio business number +1 (585) 316-0597 across Home, About, Emergency Plumbing, Service Areas, and Homeowner Guide.
+- Makes the number tap-to-call everywhere it appears and adds it to the homepage navigation and hero area.
+- Updates search-engine Organization structured data with the business number.
+- Retains the 20+ years of plumbing experience message from the prior marketing update; verify its accuracy before publishing.
+- Keeps the existing attractive five AI-generated story cards, with visible disclosure that the invented names, portraits and quotations are illustrative, NOT genuine customer testimonials.
+- Existing approved real customer reviews automatically replace the examples. To manage genuine reviews with consent, use /admin/reviews.php.
+- The reviews slider, services, booking, Stripe, SMTP, Twilio calling portal, and database logic are unchanged.
+
+INSTALL ON CPANEL WITHOUT TERMINAL
+1. Backup your existing HTML pages and assets/opp-contact.css. Download your site's current files if you have edited them since the last update.
+2. Open your hosting File Manager and navigate to the website document root (usually public_html).
+3. Upload this ZIP to that directory and Extract. Overwrite only the matching HTML pages and assets/opp-contact.css. Preserve the assets folder structure.
+4. Reload your live site (Ctrl + Shift + R). Confirm clicking the phone number opens your phone dialer.
+5. Test booking, payment flow and reviews separately. No payment or backend files are included.
+
+IMPORTANT
+Your 585 number is a New York-area-code US number; it can still receive calls for Oregon Pro Plumbing. It is currently connected to Twilio. Do not imply that it is a Eugene-local number.
+Do not publish invented, AI-generated testimonials as though real customers wrote them. Replace them with reviews received from actual customers with their permission.

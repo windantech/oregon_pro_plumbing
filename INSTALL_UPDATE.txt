@@ -1,0 +1,27 @@
+Oregon Pro Plumbing - Customer Confirmation + Admin Status Fix
+
+WHAT THIS DOES
+- Removes the prominent UNPAID booking-reference message from the customer confirmation.
+- Keeps unpaid service requests saved internally and keeps the Proceed to Pay button.
+- Replaces the old admin POST status form with a secure, AJAX-based status update.
+- Uses a dedicated authenticated endpoint (includes session validation and CSRF protection).
+- Does NOT alter Stripe, SMTP credentials, database contents, or pricing.
+
+INSTALL WITH FILE MANAGER (NO TERMINAL)
+1. Back up your live website files and database first.
+2. Open your hosting File Manager and go to your website root (usually public_html).
+3. Upload this ZIP into public_html and extract it there, MERGING folders.
+4. Confirm all four files are present/replaced:
+   - index.html
+   - assets/main.js
+   - admin/index.php
+   - api/update-booking-stage.php  (new)
+5. Refresh browser cache (Ctrl + Shift + R), then log in again at /admin/.
+6. Change a test request's stage and click Save stage. You should see Stage updated successfully.
+7. Submit a test booking; the customer confirmation should show Request received and Proceed to Pay, with no OPP booking reference displayed before Stripe confirms payment.
+
+IF YOU STILL SEE A HOSTING-BRANDED 403
+- The server or hosting WAF may be blocking POST requests before PHP runs.
+- Ask your host to inspect the server ModSecurity/WAF audit log for the failed POST to /api/update-booking-stage.php and whitelist that specific rule or request if safe.
+- Do NOT disable ModSecurity globally and do NOT make the API publicly writable.
+- If you see 'Admin session expired' or 'Security token expired', refresh /admin/, sign in again, and check that HTTPS, cookies, and domain (www versus non-www) are consistent.
